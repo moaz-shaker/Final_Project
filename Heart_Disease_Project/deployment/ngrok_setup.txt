@@ -3,17 +3,17 @@
 ## Prerequisites
 1. Install Ngrok: https://ngrok.com/download
 2. Create a free Ngrok account: https://ngrok.com/signup
-3. Get your authtoken from: https://dashboard.ngrok.com/get-started/your-authtoken
+3. Get your authtoken from: https://dashboard.ngrok.com/get-started/32v0bEHowJCEOfqcHJjGWPKl1fY_5vuuFdhJ52nYiw5tNWZ3z
 
 ## Setup Steps
 
 ### 1. Install Ngrok
 ```bash
 # Download and install Ngrok
-# Follow instructions on https://ngrok.com/download for your operating system
+# Follow instructions on https://ngrok.com/download 
 
-# Authenticate with your authtoken
-ngrok authtoken YOUR_AUTHTOKEN_HERE
+# Authenticate 
+ngrok authtoken 32v0bEHowJCEOfqcHJjGWPKl1fY_5vuuFdhJ52nYiw5tNWZ3z
 ```
 
 ### 2. Run the Streamlit App Locally
@@ -41,60 +41,7 @@ ngrok http 8501
 - Share this URL with others to access your application
 - The URL will remain active as long as the Ngrok process is running
 
-## Important Notes
-
-### Security Considerations
-- The free Ngrok plan exposes your local application to the internet
-- Anyone with the URL can access your application
-- Consider using Ngrok's paid plans for production use
-- Implement authentication if handling sensitive data
-
-### Limitations
-- Free Ngrok URLs change each time you restart
-- Free plan has bandwidth limitations
-- Free plan shows a warning page to first-time visitors
-
 ### Troubleshooting
 1. **Port 8501 already in use**: Change the port in streamlit run command
 2. **Ngrok not working**: Check your internet connection and authtoken
 3. **App not loading**: Ensure Streamlit is running on the correct port
-
-## Production Deployment Alternatives
-
-### 1. Heroku
-```bash
-# Create Procfile
-echo "web: streamlit run ui/app.py --server.port=$PORT --server.address=0.0.0.0" > Procfile
-
-# Deploy to Heroku
-git init
-git add .
-git commit -m "Initial commit"
-heroku create your-app-name
-git push heroku main
-```
-
-### 2. Streamlit Cloud
-- Push your code to GitHub
-- Connect your repository to Streamlit Cloud
-- Deploy directly from GitHub
-
-### 3. Docker
-```dockerfile
-FROM python:3.9-slim
-
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-COPY . .
-EXPOSE 8501
-
-CMD ["streamlit", "run", "ui/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
-```
-
-## Monitoring and Maintenance
-- Monitor Ngrok dashboard for usage statistics
-- Keep your local machine running while using Ngrok
-- Consider setting up automated deployment for production use
-- Regularly update dependencies and security patches
