@@ -63,7 +63,7 @@ st.markdown("""
         
         /* Override card colors in dark mode to maintain readability */
         .metric-card, .prediction-card, .feature-input {
-            background: #1e293b !important;
+            background: #334155 !important;
             color: #f8fafc !important;
             border-color: #475569 !important;
         }
@@ -79,13 +79,38 @@ st.markdown("""
         .prediction-card h2, .prediction-card p {
             color: #f8fafc !important;
         }
+        
+        /* Dark mode input elements */
+        .stSelectbox > div > div {
+            background-color: #334155 !important;
+            border-color: #475569 !important;
+        }
+        
+        .stSelectbox > div > div > div,
+        .stSelectbox label,
+        .stSlider label,
+        .stTextInput label,
+        .stNumberInput label,
+        .stTextArea label,
+        .stCheckbox label,
+        .stRadio label {
+            color: #f8fafc !important;
+        }
+        
+        .stTextInput > div > div > input,
+        .stNumberInput > div > div > input,
+        .stTextArea > div > div > textarea {
+            background-color: #334155 !important;
+            color: #f8fafc !important;
+            border-color: #475569 !important;
+        }
     }
     
     /* Global Styles */
     .main {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         background-color: var(--bg-primary);
-        color: var(--text-primary);
+        color: #ffffff;
     }
     
     /* Header Styles */
@@ -106,7 +131,7 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
         font-size: 1.2rem;
         font-weight: 400;
-        color: var(--text-secondary);
+        color: #ffffff;
         text-align: center;
         margin-bottom: 3rem;
         line-height: 1.6;
@@ -114,8 +139,8 @@ st.markdown("""
     
     /* Card Styles */
     .metric-card {
-        background: #ffffff;
-        color: #1e293b;
+        background: #f8fafc;
+        color: #ffffff;
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid var(--border-color);
@@ -146,7 +171,7 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
         font-size: 0.875rem;
         font-weight: 600;
-        color: #64748b;
+        color: #ffffff;
         margin: 0 0 0.5rem 0;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -156,14 +181,14 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
         font-size: 2rem;
         font-weight: 700;
-        color: #1e293b;
+        color: #ffffff;
         margin: 0;
     }
     
     /* Prediction Cards */
     .prediction-card {
-        background: #ffffff;
-        color: #1e293b;
+        background: #f8fafc;
+        color: #ffffff;
         padding: 2.5rem;
         border-radius: 16px;
         text-align: center;
@@ -192,7 +217,7 @@ st.markdown("""
         margin: 0 0 1rem 0;
         position: relative;
         z-index: 1;
-        color: #1e293b;
+        color: #ffffff;
     }
     
     .prediction-card p {
@@ -203,7 +228,7 @@ st.markdown("""
         opacity: 0.9;
         position: relative;
         z-index: 1;
-        color: #1e293b;
+        color: #ffffff;
     }
     
     /* Risk Level Cards */
@@ -235,8 +260,8 @@ st.markdown("""
     
     /* Feature Input Styles */
     .feature-input {
-        background: #ffffff;
-        color: #1e293b;
+        background: #f8fafc;
+        color: #ffffff;
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid var(--border-color);
@@ -254,7 +279,7 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
         font-size: 1.125rem;
         font-weight: 600;
-        color: #1e293b;
+        color: #ffffff;
         margin: 0 0 1rem 0;
     }
     
@@ -280,19 +305,79 @@ st.markdown("""
     
     /* Sidebar Styles */
     .css-1d391kg {
-        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        background: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 100%);
     }
     
     /* Selectbox Styles */
     .stSelectbox > div > div {
-        background-color: #ffffff;
+        background-color: #f8fafc;
         border: 1px solid #e2e8f0;
         border-radius: 8px;
+    }
+    
+    .stSelectbox > div > div > div {
+        color: #ffffff !important;
+    }
+    
+    .stSelectbox label {
+        color: #ffffff !important;
     }
     
     /* Slider Styles */
     .stSlider > div > div > div > div {
         background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .stSlider label {
+        color: #ffffff !important;
+    }
+    
+    .stSlider > div > div > div > div > div {
+        color: #ffffff !important;
+    }
+    
+    /* Input Elements General Styling */
+    .stTextInput > div > div > input,
+    .stNumberInput > div > div > input,
+    .stTextArea > div > div > textarea {
+        background-color: #f8fafc !important;
+        color: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+    
+    .stTextInput label,
+    .stNumberInput label,
+    .stTextArea label {
+        color: #ffffff !important;
+    }
+    
+    /* Streamlit Widget Labels */
+    .stSelectbox label,
+    .stSlider label,
+    .stTextInput label,
+    .stNumberInput label,
+    .stTextArea label,
+    .stCheckbox label,
+    .stRadio label {
+        color: #ffffff !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Streamlit Widget Values */
+    .stSelectbox > div > div > div,
+    .stSlider > div > div > div > div > div,
+    .stTextInput > div > div > input,
+    .stNumberInput > div > div > input {
+        color: #ffffff !important;
+    }
+    
+    /* Streamlit Widget Containers */
+    .stSelectbox > div,
+    .stSlider > div,
+    .stTextInput > div,
+    .stNumberInput > div,
+    .stTextArea > div {
+        background-color: transparent !important;
     }
     
     /* Navigation Styles */
@@ -394,6 +479,26 @@ st.markdown("""
     footer {visibility: hidden;}
     header {visibility: hidden;}
     
+    /* Additional Streamlit Element Styling */
+    .stApp > div > div > div > div > div {
+        color: #ffffff !important;
+    }
+    
+    /* Ensure all text in main content area is visible */
+    .main .block-container {
+        color: #ffffff !important;
+    }
+    
+    .main .block-container p,
+    .main .block-container h1,
+    .main .block-container h2,
+    .main .block-container h3,
+    .main .block-container h4,
+    .main .block-container h5,
+    .main .block-container h6 {
+        color: #ffffff !important;
+    }
+    
     /* Custom scrollbar */
     ::-webkit-scrollbar {
         width: 8px;
@@ -474,8 +579,7 @@ def main():
             "🏠 Clinical Dashboard",
             "🔬 Risk Assessment",
             "📊 Model Performance",
-            "📈 Clinical Analytics",
-            "⚙️ System Information"
+            "📈 Clinical Analytics"
         ],
         key="nav_select"
     )
@@ -494,8 +598,6 @@ def main():
         show_performance_page(model_comparison)
     elif page == "📈 Clinical Analytics":
         show_analysis_page()
-    elif page == "⚙️ System Information":
-        show_about_page()
 
 def show_home_page():
     """Display professional dashboard home page"""
@@ -613,23 +715,23 @@ def show_home_page():
     st.markdown("### 🚀 Quick Start Guide")
     
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0;">
-        <h3 style="font-family: 'Inter', sans-serif; color: #1e293b; margin-bottom: 1.5rem;">How to Get Started</h3>
+    <div style="background: #000000; padding: 2rem; border-radius: 16px; border: 1px solid #333333;">
+        <h3 style="font-family: 'Inter', sans-serif; color: #ffffff; margin-bottom: 1.5rem;">How to Get Started</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
             <div style="text-align: center;">
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 600;">1</div>
-                <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Navigate to AI Prediction</h4>
-                <p style="color: #64748b; font-size: 0.875rem;">Click on "🔮 AI Prediction" in the sidebar</p>
+                <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Navigate to Risk Assessment</h4>
+                <p style="color: #cccccc; font-size: 0.875rem;">Click on "🔬 Risk Assessment" in the sidebar</p>
             </div>
             <div style="text-align: center;">
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 600;">2</div>
-                <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Input Health Data</h4>
-                <p style="color: #64748b; font-size: 0.875rem;">Enter your health parameters in the form</p>
+                <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Enter Clinical Parameters</h4>
+                <p style="color: #cccccc; font-size: 0.875rem;">Input your health data in the clinical form</p>
             </div>
             <div style="text-align: center;">
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 600;">3</div>
-                <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Get AI Prediction</h4>
-                <p style="color: #64748b; font-size: 0.875rem;">Click "Predict" for instant risk assessment</p>
+                <h4 style="color: #ffffff; margin-bottom: 0.5rem;">Get AI Assessment</h4>
+                <p style="color: #cccccc; font-size: 0.875rem;">Click "Get AI Prediction" for instant results</p>
             </div>
         </div>
     </div>
@@ -671,8 +773,8 @@ def show_home_page():
     # Disclaimer
     st.markdown("""
     <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin-top: 2rem;">
-        <h4 style="color: #92400e; margin-bottom: 0.5rem;">⚠️ Medical Disclaimer</h4>
-        <p style="color: #92400e; font-size: 0.875rem; margin: 0;">
+        <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-weight: 600;">⚠️ Medical Disclaimer</h4>
+        <p style="color: #ffffff; font-size: 0.875rem; margin: 0; line-height: 1.5;">
             This system is for educational and research purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical concerns.
         </p>
     </div>
@@ -795,18 +897,6 @@ def show_prediction_page(scaler, selected_features, models, best_model):
         # Placeholder for results
         st.info("👈 Please input your health parameters and click 'Get AI Prediction' to see results.")
         
-        # Add some helpful information
-        st.markdown("""
-        <div style="background: #f0f9ff; border: 1px solid #0ea5e9; border-radius: 8px; padding: 1rem; margin-top: 1rem;">
-            <h4 style="color: #0c4a6e; margin-bottom: 0.5rem;">💡 Tips for Accurate Results</h4>
-            <ul style="color: #0c4a6e; font-size: 0.875rem; margin: 0;">
-                <li>Ensure all values are from recent medical tests</li>
-                <li>Use resting values for blood pressure and heart rate</li>
-                <li>Consult with healthcare professionals for interpretation</li>
-                <li>This is a screening tool, not a diagnostic test</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
 
 def make_prediction(feature_inputs, scaler, selected_features, models, best_model):
     """Make prediction and display results"""
@@ -956,7 +1046,7 @@ def make_prediction(feature_inputs, scaler, selected_features, models, best_mode
     
     # Add professional footer with recommendations
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0; margin-top: 2rem;">
+    <div style="background: linear-gradient(135deg, #f1f5f9 0%, #f8fafc 100%); padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0; margin-top: 2rem;">
         <h3 style="font-family: 'Inter', sans-serif; color: #1e293b; margin-bottom: 1rem;">📋 Next Steps & Recommendations</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
             <div>
@@ -1111,276 +1201,6 @@ def show_analysis_page():
     
     for i, factor in enumerate(risk_factors, 1):
         st.write(f"{i}. {factor}")
-
-def show_about_page():
-    """Display professional about page"""
-    
-    # Page Header
-    st.markdown("""
-    <div style="text-align: center; margin-bottom: 3rem;">
-        <h2 style="font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem;">
-            ⚙️ System Information
-        </h2>
-        <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #64748b;">
-            Learn more about HeartGuard AI and its advanced machine learning capabilities
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # System Overview
-    st.markdown("### 🏗️ System Architecture")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        <div class="feature-input">
-            <h3>🫀 HeartGuard AI</h3>
-            <p style="color: #64748b; line-height: 1.6;">
-                Advanced machine learning system for early heart disease detection and risk assessment. 
-                Built with state-of-the-art algorithms and trained on clinical data for maximum accuracy.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="feature-input">
-            <h3>🎯 Mission Statement</h3>
-            <p style="color: #64748b; line-height: 1.6;">
-                To provide accessible, accurate, and reliable heart disease risk assessment tools 
-                that empower individuals to take proactive steps toward better cardiovascular health.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="feature-input">
-            <h3>🔬 Technology Stack</h3>
-            <ul style="color: #64748b; line-height: 1.8;">
-                <li><strong>Frontend:</strong> Streamlit with custom CSS</li>
-                <li><strong>Machine Learning:</strong> Scikit-learn</li>
-                <li><strong>Data Processing:</strong> Pandas, NumPy</li>
-                <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
-                <li><strong>Deployment:</strong> Ngrok, GitHub</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="feature-input">
-            <h3>📊 Performance Metrics</h3>
-            <ul style="color: #64748b; line-height: 1.8;">
-                <li><strong>Accuracy:</strong> 90.2%</li>
-                <li><strong>F1-Score:</strong> 90.0%</li>
-                <li><strong>AUC:</strong> 95.1%</li>
-                <li><strong>Prediction Time:</strong> &lt; 5ms</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # AI Models Section
-    st.markdown("### 🤖 AI Models Implemented")
-    
-    models_info = [
-        {
-            "name": "Logistic Regression",
-            "description": "Linear classification model for binary outcomes",
-            "accuracy": "86.9%",
-            "use_case": "Baseline model with interpretable results"
-        },
-        {
-            "name": "Decision Tree",
-            "description": "Tree-based classification with rule extraction",
-            "accuracy": "72.1%",
-            "use_case": "Interpretable decision paths"
-        },
-        {
-            "name": "Random Forest",
-            "description": "Ensemble method with multiple decision trees",
-            "accuracy": "90.2%",
-            "use_case": "Best performing model (Primary)"
-        },
-        {
-            "name": "Support Vector Machine",
-            "description": "Kernel-based classification with high accuracy",
-            "accuracy": "86.9%",
-            "use_case": "Robust classification boundaries"
-        }
-    ]
-    
-    for i, model in enumerate(models_info, 1):
-        col1, col2, col3 = st.columns([2, 1, 1])
-        
-        with col1:
-            st.markdown(f"""
-            <div class="metric-card">
-                <h3 style="color: #1e293b; margin-bottom: 0.5rem;">{model['name']}</h3>
-                <p style="color: #64748b; font-size: 0.875rem; margin: 0 0 0.5rem 0;">{model['description']}</p>
-                <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-style: italic;">{model['use_case']}</p>
-            </div>
-            """, unsafe_allow_html=True)
-        
-        with col2:
-            st.markdown(f"""
-            <div class="metric-card">
-                <h3>Accuracy</h3>
-                <div class="value">{model['accuracy']}</div>
-            </div>
-            """, unsafe_allow_html=True)
-        
-        with col3:
-            st.markdown(f"""
-            <div class="metric-card">
-                <h3>Rank</h3>
-                <div class="value">#{i}</div>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    # Dataset Information
-    st.markdown("### 📈 Dataset Information")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("""
-        <div class="feature-input">
-            <h3>📊 UCI Heart Disease Dataset</h3>
-            <ul style="color: #64748b; line-height: 1.8;">
-                <li><strong>Source:</strong> UCI Machine Learning Repository</li>
-                <li><strong>Dataset ID:</strong> 45 (Heart Disease)</li>
-                <li><strong>Total Samples:</strong> 303</li>
-                <li><strong>Features:</strong> 13 clinical parameters</li>
-                <li><strong>Target:</strong> Binary classification</li>
-                <li><strong>Missing Values:</strong> 6 (handled)</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="feature-input">
-            <h3>🏥 Clinical Parameters</h3>
-            <ul style="color: #64748b; line-height: 1.8;">
-                <li>Age, Sex, Chest Pain Type</li>
-                <li>Resting Blood Pressure</li>
-                <li>Serum Cholesterol</li>
-                <li>Fasting Blood Sugar</li>
-                <li>Resting ECG Results</li>
-                <li>Max Heart Rate</li>
-                <li>Exercise Induced Angina</li>
-                <li>ST Depression</li>
-                <li>Slope of Peak Exercise</li>
-                <li>Number of Major Vessels</li>
-                <li>Thalassemia Type</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Features and Capabilities
-    st.markdown("### ✨ Key Features & Capabilities")
-    
-    features = [
-        "🔮 Real-time AI prediction with instant results",
-        "📊 Multi-model comparison and analysis",
-        "📈 Comprehensive performance metrics visualization",
-        "🎯 Risk probability assessment with confidence scores",
-        "📱 Responsive web interface for all devices",
-        "🔒 Secure data processing and privacy protection",
-        "⚡ High-performance prediction engine",
-        "📋 Detailed health parameter analysis"
-    ]
-    
-    col1, col2 = st.columns(2)
-    
-    for i, feature in enumerate(features):
-        col = col1 if i % 2 == 0 else col2
-        with col:
-            st.markdown(f"""
-            <div style="display: flex; align-items: center; padding: 0.75rem; background: #f8fafc; border-radius: 8px; margin: 0.5rem 0;">
-                <span style="font-size: 1.2rem; margin-right: 0.75rem;">{feature.split(' ')[0]}</span>
-                <span style="color: #64748b; font-size: 0.875rem;">{feature[2:]}</span>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    # Disclaimer and Contact
-    st.markdown("### ⚠️ Important Disclaimers")
-    
-    st.markdown("""
-    <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
-        <h4 style="color: #92400e; margin-bottom: 1rem;">Medical Disclaimer</h4>
-        <p style="color: #92400e; line-height: 1.6; margin: 0;">
-            This application is designed for educational and research purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment. The predictions provided are based on statistical models and should be interpreted with caution. Always consult with qualified healthcare professionals for medical concerns, diagnosis, and treatment decisions.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div style="background: #f0f9ff; border: 1px solid #0ea5e9; border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
-        <h4 style="color: #0c4a6e; margin-bottom: 1rem;">Data Privacy & Security</h4>
-        <p style="color: #0c4a6e; line-height: 1.6; margin: 0;">
-            All data processing is performed locally in your browser. No personal health information is stored, transmitted, or shared with third parties. Your privacy and data security are our top priorities.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Contact Information
-    st.markdown("### 📞 Contact & Support")
-    
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.markdown("""
-        <div class="feature-input">
-            <h3>🐛 Bug Reports</h3>
-            <p style="color: #64748b; font-size: 0.875rem;">
-                Report issues or bugs through our GitHub repository
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="feature-input">
-            <h3>💡 Feature Requests</h3>
-            <p style="color: #64748b; font-size: 0.875rem;">
-                Suggest new features or improvements
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col3:
-        st.markdown("""
-        <div class="feature-input">
-            <h3>📧 General Inquiries</h3>
-            <p style="color: #64748b; font-size: 0.875rem;">
-                Contact the development team for questions
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Professional Footer
-    st.markdown("""
-    <div class="footer">
-        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: left;">
-                <h4 style="font-family: 'Inter', sans-serif; color: var(--text-primary); margin-bottom: 0.5rem;">🫀 CardioPredict Pro</h4>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Clinical-Grade Cardiovascular Risk Assessment</p>
-            </div>
-            <div style="text-align: center;">
-                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">© 2024 CardioPredict Pro | Clinical Decision Support System</p>
-                <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">For clinical research and educational purposes only</p>
-            </div>
-            <div style="text-align: right;">
-                <div style="display: flex; gap: 1rem;">
-                    <a href="#" style="color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;">Privacy</a>
-                    <a href="#" style="color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;">Terms</a>
-                    <a href="#" style="color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;">Support</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
