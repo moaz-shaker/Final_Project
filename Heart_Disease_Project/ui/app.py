@@ -12,7 +12,7 @@ warnings.filterwarnings('ignore')
 
 # Set page config
 st.set_page_config(
-    page_title="CardioPredict Pro - Clinical Heart Disease Risk Assessment",
+    page_title="Cardio Predict Pro - Clinical Heart Disease Risk Assessment",
     page_icon="🫀",
     layout="wide",
     initial_sidebar_state="expanded",
