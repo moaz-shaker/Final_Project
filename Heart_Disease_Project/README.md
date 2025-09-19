@@ -21,7 +21,7 @@ The project uses the Heart Disease UCI dataset (ID: 45) which contains 14 attrib
 
 ```
 Heart_Disease_Project/
-│── data/                    # Dataset files
+│── data/                   # Dataset files
 │── notebooks/              # Jupyter notebooks for each step
 │── models/                 # Trained model files
 │── ui/                     # Streamlit application
@@ -64,7 +64,7 @@ streamlit run ui/app.py
 
 ### Deployment with Ngrok
 
-1. Install Ngrok: https://ngrok.com/download
+1. Install Ngrok
 2. Run the Streamlit app locally
 3. In another terminal, run:
 ```bash
@@ -84,7 +84,6 @@ ngrok http 8501
 - Hierarchical Clustering
 
 ## Performance Metrics
-
 The models are evaluated using:
 - Accuracy
 - Precision
@@ -93,18 +92,4 @@ The models are evaluated using:
 - ROC Curve & AUC Score
 
 ## Results
-
 Model performance results and visualizations are saved in the `results/` directory.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is open source and available under the MIT License.
-
