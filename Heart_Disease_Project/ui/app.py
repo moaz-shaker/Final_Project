@@ -60,6 +60,25 @@ st.markdown("""
             --bg-tertiary: #334155;
             --border-color: #475569;
         }
+        
+        /* Override card colors in dark mode to maintain readability */
+        .metric-card, .prediction-card, .feature-input {
+            background: #1e293b !important;
+            color: #f8fafc !important;
+            border-color: #475569 !important;
+        }
+        
+        .metric-card h3, .feature-input h3 {
+            color: #cbd5e1 !important;
+        }
+        
+        .metric-card .value {
+            color: #f8fafc !important;
+        }
+        
+        .prediction-card h2, .prediction-card p {
+            color: #f8fafc !important;
+        }
     }
     
     /* Global Styles */
@@ -95,7 +114,8 @@ st.markdown("""
     
     /* Card Styles */
     .metric-card {
-        background: var(--bg-primary);
+        background: #ffffff;
+        color: #1e293b;
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid var(--border-color);
@@ -126,7 +146,7 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
         font-size: 0.875rem;
         font-weight: 600;
-        color: var(--text-muted);
+        color: #64748b;
         margin: 0 0 0.5rem 0;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -136,14 +156,14 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
         font-size: 2rem;
         font-weight: 700;
-        color: var(--text-primary);
+        color: #1e293b;
         margin: 0;
     }
     
     /* Prediction Cards */
     .prediction-card {
-        background: var(--bg-primary);
-        color: var(--text-primary);
+        background: #ffffff;
+        color: #1e293b;
         padding: 2.5rem;
         border-radius: 16px;
         text-align: center;
@@ -172,6 +192,7 @@ st.markdown("""
         margin: 0 0 1rem 0;
         position: relative;
         z-index: 1;
+        color: #1e293b;
     }
     
     .prediction-card p {
@@ -182,6 +203,7 @@ st.markdown("""
         opacity: 0.9;
         position: relative;
         z-index: 1;
+        color: #1e293b;
     }
     
     /* Risk Level Cards */
@@ -213,7 +235,8 @@ st.markdown("""
     
     /* Feature Input Styles */
     .feature-input {
-        background: var(--bg-primary);
+        background: #ffffff;
+        color: #1e293b;
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid var(--border-color);
@@ -231,7 +254,7 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
         font-size: 1.125rem;
         font-weight: 600;
-        color: var(--text-primary);
+        color: #1e293b;
         margin: 0 0 1rem 0;
     }
     
