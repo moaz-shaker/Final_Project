@@ -17,9 +17,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'Get Help': 'https://github.com/your-repo/cardio-predict-pro',
-        'Report a bug': "https://github.com/your-repo/cardio-predict-pro/issues",
-        'About': "CardioPredict Pro - Clinical-Grade Heart Disease Risk Assessment Platform"
+        'Get Help': 'https://github.com/moaz-shaker/Final_Project/tree/main/Heart_Disease_Project',
+        
     }
 )
 
